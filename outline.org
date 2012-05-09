@@ -1,0 +1,13 @@
+* The basics
+** tag structure
+*** encased in angle brackets <>
+*** forward slash ends a tag
+    <tagname></tagname>
+*** A few basic tags
+    <html> - encases the entire document
+    <head> - metadata, scripts, stylesheets, etc.
+    <body> - content to be displayed
+    <title> - title of document (to display at top of window or tab)
+** lesson-1.html
+* audio
+http://sampleswap.org/mp3/creative-commons/free-music.php
