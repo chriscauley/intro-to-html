@@ -3,7 +3,7 @@ body { font-size: 16px; }
 #status {
   display: inline-block;
   position: absolute;
-  bottom: 0;
+  top: 0;
   right: 0;
   padding: 20px;
 }
@@ -15,3 +15,16 @@ body { font-size: 16px; }
 .wrong {
   background-color: red;
 }
+
+.prev, .next, .toc {
+  bottom: 0;
+  position: absolute;
+}
+
+.prev { left: 0; }
+.next { right: 0; }
+.toc { left: 0; text-align: center; width: 100%; }
+
+li span { display: inline-block; margin: 0 15px 0 0; padding: 0 5px; }
+
+thead { font-weight: bold; }

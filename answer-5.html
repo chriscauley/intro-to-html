@@ -1,0 +1,52 @@
+<html>
+  <head>
+    <title>Forms</title>
+    <script type="text/javascript" src="./jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="./test.js"></script>
+    <link href="./style.css" type="text/css" rel="stylesheet"/>
+  </head>
+  <body>
+    <h1>Forms and inputs</h1>
+    <ul>
+      <li>Add another color not currently in the list. Select it.</li>
+      <li>Add a text input for email. Make sure to label it.</li>
+      <li>Fill out name and email and submit.</li>
+    </ul>
+    <form method="get">
+      <div>
+	Favorite color &gt; &gt;
+      </div>
+      <div>
+	<input type="radio" name="color" value="blue" id="blue" />
+	<label for="blue">Blue</label>
+      </div>
+      <div>
+	<input type="radio" name="color" value="pink" id="pink" />
+	<label for="pink">Pink</label>
+      </div>
+      <div>
+	<input type="radio" name="color" value="turquois" id="turquois" />
+	<label for="turquois">Turquois</label>
+      </div>
+      <div>
+	<input type="radio" name="color" value="gray" id="gray" />
+	<label for="gray">Gray</label>
+      </div>
+      <br />
+      <br />
+      <div>
+	<label for="turquois">Name</label>
+	<input type="text" name="name" value="Enter your name" />
+      </div>
+      <br />
+      <br />
+      <div>
+	<label for="turquois">Email</label>
+	<input type="text" name="email" value="Enter your email" />
+      </div>
+      <br />
+      <br />
+      <input type="submit" />
+    </form>
+  </body>
+</html>

@@ -1,13 +1,13 @@
 ========
-Octogit
+Intro to HTML
 ========
 
+A class on HTML for TX/RX labs.
 
-This repository has been created with Octogit.
+Open toc.html in a web browser, click on a lesson, and open the lesson in a text editor.
 
-
-.. image:: http://myusuf3.github.com/octogit/assets/img/readme_image.png
+Complete the tests as you go.
 
 Author
 ======
-Mahdi Yusuf (@myusuf3)
+Chris Cauley (

@@ -1,0 +1,49 @@
+<html>
+  <head>
+    <title>Tables</title>
+    <script type="text/javascript" src="./jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="./test.js"></script>
+    <link href="./style.css" type="text/css" rel="stylesheet"/>
+  </head>
+  <body>
+    <h1>Table</h1>
+    <ul>
+      <li>Add a row for Tomas, age 17, with scores 78,95,93. (add it to the end)</li>
+      <li>Change the text in row 3 column 2 to "monkey".</li>
+      <li>Add a border and cellpadding.</li>
+      <li>Make the "scores" header span all 3 columns.</li>
+    </ul>
+    <table cellpadding="5" border="1">
+      <thead>
+	<tr>
+	  <td>student</td>
+	  <td>age</td>
+	  <td colspan="3">scores</td>
+	</tr>
+      </thead>
+      <tbody>
+	<tr>
+	  <td>bill</td>
+	  <td>18</td>
+	  <td>90</td>
+	  <td>78</td>
+	  <td>85</td>
+	</tr>
+	<tr>
+	  <td>kim</td>
+	  <td>monkey</td>
+	  <td>95</td>
+	  <td>76</td>
+	  <td>99</td>
+	</tr>
+	<tr>
+	  <td>tomas</td>
+	  <td>17</td>
+	  <td>78</td>
+	  <td>95</td>
+	  <td>93</td>
+	</tr>
+      </tbody>
+    </table>
+  </body>
+</html>
