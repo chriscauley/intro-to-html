@@ -21,12 +21,12 @@ body { font-size: 16px; }
 }
 
 .prev, .next, .toc {
-  bottom: 0;
+  bottom: 10px;
   position: absolute;
 }
 
-.prev { left: 0; }
-.next { right: 0; }
+.prev { left: 20px; }
+.next { right: 20px;; }
 .toc { left: 0; text-align: center; width: 100%; }
 
 li span { display: inline-block; margin: 0 15px 0 0; padding: 0 5px; }
