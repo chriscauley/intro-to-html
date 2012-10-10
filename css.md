@@ -40,7 +40,7 @@ selecting elements
 
 * select by id - The number sign selects elements by id
 
-> #main-container { margin: 0 auto; }
+> \#main-container { margin: 0 auto; }
 > /* matches the element with id="main-container */
 
 * select by class
@@ -67,14 +67,14 @@ selecting descendents
 
 Selectors separated by spaces indicate that you should matches only elements of the second selector conatained by elements matching the first selector.
 
-> #side-bar li { text-decoration: underline; }
+> \#side-bar li { text-decoration: underline; }
 > /* matches all li elements inside of the #side-bar */
 
 ### immediate child >
 
 To select only immediate children, the greater than sign is used
 
-> #side-bar > div { font-weight: bold; }
+> \#side-bar > div { font-weight: bold; }
 
 Works like this:
 
@@ -91,8 +91,8 @@ Pseudo classes act like classes, and match elements with specific criteria. The 
 
 1. :first-child :last-child
 
-> #side-bar li:first-child { font-weight: bold; }
-> #side-bar li:last-child { text-decoration: underline; }
+> \#side-bar li:first-child { font-weight: bold; }
+> \#side-bar li:last-child { text-decoration: underline; }
 
 Works like this:
 
@@ -107,8 +107,8 @@ Works like this:
 
 2. :not(selectors) matches all elements that do not match the criteria. This is a useful shortcut.
 
-> #side-bar li { color: purple }
-> #side-bar li:not(.visible) { display: none; }
+> \#side-bar li { color: purple }
+> \#side-bar li:not(.visible) { display: none; }
 
 > <aside id="side-bar">
 >   <ul>
@@ -172,19 +172,19 @@ We should start with a discussion of units, because math is fun.
 
 * px - number of pixels for a given attribute
 
-> #side-bar { height: 1000px; }
+> \#side-bar { height: 1000px; }
 > /* The side bar is now 1000 pixels tall */
 
 * percent of current container's value
 
-> #side-bar > * { height: 20% }
+> \#side-bar > * { height: 20% }
 > /* a great ide if #side-bar has 5 children! */
 
 * em - ratio of parent container's value
 
-> #profile-box { font-size: 20px; }
-> #profile-box > p { font-size: .5em } /* font-size of p is now 10px; */
-> #profile-box > h1 { font-size: 1.3em } /* font-size of h1 is now 26px; */
+> \#profile-box { font-size: 20px; }
+> \#profile-box > p { font-size: .5em } /* font-size of p is now 10px; */
+> \#profile-box > h1 { font-size: 1.3em } /* font-size of h1 is now 26px; */
 
 * physical units mm, cm, and in are available, but are buggy and should never be used
 
@@ -203,13 +203,13 @@ Many CSS attributes can take colors. These can be expressed in 3 ways:
 > /* the background is now a dark gray */
 > /* this is equivalent to rgb(32,32,32) */
 
-> #side-bar { border: #733 }
+> \#side-bar { border: #733 }
 > /* the side bar now has a dark red border */
 > /* this is equivalent to #773333 */
 
 * rgba(#,#,#,#) - the a is alpha, or % opacity. It is between 0 and 1.
 
-> #side-bar { background: rgba(255,255,255,.9); }
+> \#side-bar { background: rgba(255,255,255,.9); }
 > /* the side bar now has a white, slightly see-through background */
 
 ### font and all of it's marvelous variants!
