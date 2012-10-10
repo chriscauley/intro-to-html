@@ -3,7 +3,7 @@ Intro to CSS
 
 CSS is performed by a series of selectors and attributes.
 
-> selector { key: value; key: value; key: value }
+     selector { key: value; key: value; key: value }
 
 CSS comments are denoted like this `/* this is a comment */` (similar to comments in PHP, C, or java).
 
@@ -11,9 +11,9 @@ CSS can be included in three ways:
 
 1. The style tag:
 
-> <style type="text/css">
-> * { display: none; }
-> </style>
+     <style type="text/css">
+     * { display: none; }
+     </style>
 
 2. External style sheets:
 
