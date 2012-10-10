@@ -1,3 +1,9 @@
+* Intro
+** HTML is the document type of the internet
+** HTML provides only text content and the semantic relationship between text elements
+** The element inspector shows everything which is going on in any webpage!
+** The goal of this class is to teach you how elements interact with each other
+** This focuses on HTML concepts rather than specifics
 * The basics
 ** tag structure
 *** encased in angle brackets <>
@@ -9,5 +15,13 @@
     <body> - content to be displayed
     <title> - title of document (to display at top of window or tab)
 ** lesson-1.html
-* audio
-http://sampleswap.org/mp3/creative-commons/free-music.php
+* Tag embedding and a few new tabs
+** introduct p, b, i, and h1...
+** tags can contain each other!'
+* Lists and links
+** List show related items
+** links take you to other uri's
+** show javascript: alert('hello world');
+* Images
+** how html handles images
+** resizing is somewhat sloppy
