@@ -21,13 +21,16 @@ CSS can be included in three ways:
 
 2. External style sheets:
 
+```css
 > <link rel="stylesheet" type="text/css" href="/path/to/stylesheet.css" />
+```
 
 3. Inline (element specific styles, no selector used):
 
-> <p>This is normal sized</p>
-> <p style="font-size: 10em">This is 10x as large.</p>
-
+```html
+<p>This is normal sized</p>
+<p style="font-size: 10em">This is 10x as large.</p>
+```
 selecting elements
 --------
 
@@ -35,34 +38,46 @@ selecting elements
 
 * select all * - matches every element
 
+```css
 > * { display: none }
 > /* the above line hides all *
+```
 
 * select by tagname - any name without a symbol infront of it matches elements by tagname (eg div, input, p, ul ...)
 
+```css
 > div { font-size: 10px; } /* matches every div on the page */
+```
 
 * select by id - The number sign selects elements by id
 
+```css
 > \#main-container { margin: 0 auto; }
 > /* matches the element with id="main-container */
+```
 
 * select by class
 
+```css
 > .purple-text
 > /* matches any element with class="purple-text" */
+```
 
 * select by attribute [attr=value]
 
+```css
 > [type=text] { background: pink; }
 > /* matches all text inputs */
+```
 
 ### chaining selectors
 
 Selectors not separated by a space indicate that you should match elements matching all selectors.
 
+```css
 > input[type=text].required { font-weight: bold; }
 > /* matches all inputs of type=text with class="required" */
+```
 
 selecting descendents
 --------
@@ -71,23 +86,29 @@ selecting descendents
 
 Selectors separated by spaces indicate that you should matches only elements of the second selector conatained by elements matching the first selector.
 
+```css
 > \#side-bar li { text-decoration: underline; }
 > /* matches all li elements inside of the #side-bar */
+```
 
 ### immediate child >
 
 To select only immediate children, the greater than sign is used
 
+```css
 > \#side-bar > div { font-weight: bold; }
+```
 
 Works like this:
 
+```html
 > <aside id="side-bar">
 >   <div>This is matched</div>
 >   <form>
 >     <div>I am not matched</div>
 >   </form>
 > </aside>
+```
 
 ### pseudo classes
 
@@ -95,11 +116,14 @@ Pseudo classes act like classes, and match elements with specific criteria. The 
 
 1. :first-child :last-child
 
+```css
 > \#side-bar li:first-child { font-weight: bold; }
 > \#side-bar li:last-child { text-decoration: underline; }
+```
 
 Works like this:
 
+```html
 > <aside id="side-bar">
 >   <ul>
 >     <li>I am bold</li>
@@ -108,12 +132,16 @@ Works like this:
 >     <li>I am italic</li>
 >   </ul>
 > </aside>
+```
 
 2. :not(selectors) matches all elements that do not match the criteria. This is a useful shortcut.
 
+```css
 > \#side-bar li { color: purple }
 > \#side-bar li:not(.visible) { display: none; }
+```
 
+```html
 > <aside id="side-bar">
 >   <ul>
 >
@@ -139,6 +167,7 @@ Works like this:
 >
 >   </ul>
 > </aside>
+```
 
 ### :selected :checked
 
