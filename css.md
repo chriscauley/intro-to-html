@@ -31,6 +31,7 @@ CSS can be included in three ways:
 <p>This is normal sized</p>
 <p style="font-size: 10em">This is 10x as large.</p>
 ```
+
 selecting elements
 --------
 
@@ -303,3 +304,131 @@ font-family: "Helvetica", Arial, sans-serif;
 /* a list of fonts to use */
 /* if the browser can't find the first, it defaults to the second, etc */
 ```
+
+The box model
+--------
+
+Googling the box model will get you a good image. I'm not going to bother reproducing one here.
+
+### The box
+
+Any element with `display: block` or `display: inline-block` is considered a block. Inline-block elements will not break the line, block elements will.  It has several layers, from outside to in, they are:
+
+1. margin: the spacing between the border and neighboring elements.
+
+2. border: a layer between the margin and padding. Can have color and style.
+
+3. padding: the distance between the border and the content. The background will be shown in the padding.
+
+4. content: the actual content shown. This will be set by the width and the height properties. If not set the content can be as wide as the parent content and as heigh as necessary.
+
+### Assigning size
+
+Size can be in px, em, %, or any other units. Size is asssigned in the order of top, right, bottom, left. If a size is missing, it uses the next logical size:
+
+```css
+.some-div {
+  padding: 10px; /* assigns all 4 sides */
+  padding: 10px 5px; /* top and bottom are 10px, left and right are 5px */
+  padding: 10px 5px 0; /* same as above with zero padding bottom */
+  padding: 10px 5px 0 25px; /* right is still 5, left is 25px; */
+  padding-left: 0; /* only the left padding is changed */
+}
+```
+
+Note: each `padding:` declaration overwrites the last (only the bottom most one counts).  However `padding-left` only overrides the left padding.
+
+## fun with borders
+
+Borders require a style, width and color. With CSS3 the color can be an image or a gradient (fun, fun, fun!) Borders, much like fonts, have a shorthand:
+
+```css
+border: 10px black solid;
+```
+
+is equivalent to:
+
+```css
+border-width: 10px; /* or 10px 10px 10px 10px */
+border-style: solid;
+border-color: black;
+```
+
+Borders also can have `border-radius`, which rounds the corners of the border.
+
+Positioning
+--------
+
+### Static
+
+One of the more difficult css concepts to understand. Elements are naturally set to `position: static`, meaning that they are positioned one after another, taking up space and landing logically where they will. Block elements are positioned vertically, inline and inline-block elements go from left to right like text in english.
+
+### Fixed
+
+A fixed element is positioned relative to the browser window. Scrolling will not move this element. The element will not take up space (it will not displace other elements). The following rules will position an element to the top right of the window:
+
+```css
+position: fixed;
+top: 0;
+right: 0;
+```
+
+The following rules will position an element at the bottom left of the window. There will be 10 pixels between the element and the window, the bottom 10 pixels will be cut off of the screen.
+
+```css
+position: fixed;
+bottom: -10px;
+left: 10px;
+```
+
+### Relative
+
+If an element has `position: relative;`, it is positioned relative to it's static position. It still takes up the same space, but now can be moved with left, right, top, bottom:
+
+```css
+position: relative; /* at this point, nothing has changed */
+top: -5px; /* move the element 5 pixels up */
+left: 10px; /* move the element 10 pixels to the right (from the left border)
+```
+
+### Absolute
+
+Here's where it gets tricky. Absolute elements are positioned "relative to the closest relative element". The body element is considered `position: relative;`, so by default `position: absolute;` works the same way as `position: fixed`, but using the body instead of the window. Like fixed elements, absolute elements take up no space.
+
+```html
+<body>
+  <div id="wrapper">
+
+    <div style="position: absolute; bottom: 0; right: 0;">
+      I'm at the bottom of the body!
+    </div>
+
+    <div id="side-bar" style="position: relative;">
+      <div style="position: absolute; top: 20px;">
+        I'm 20px from the top of the sidebar!
+      </div>
+    </div>
+
+  </div>
+</body>
+
+```
+
+Backgrounds
+--------
+
+Backgrounds can be images or colors. Backgrounds also have a shorthand:
+
+```css
+background: url(/images/background.jpeg) center black repeat-x;
+```
+
+Is equivalent to:
+
+```css
+background-image: url(/images/background.jpeg); /* sets the image */
+background-position: center; /* centers it in the page */
+background-repeat: repeat-x; /* the background will only repeat horizontally */
+background-color: black; /* any place without the image will be black */
+```
+
