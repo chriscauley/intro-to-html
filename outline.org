@@ -16,7 +16,7 @@
     <title> - title of document (to display at top of window or tab)
 ** lesson-1.html
 * Tag embedding and a few new tabs
-** introduct p, b, i, and h1...
+** introduce p, b, i, and h1...
 ** tags can contain each other!'
 * Lists and links
 ** List show related items
