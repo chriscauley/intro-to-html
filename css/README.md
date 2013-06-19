@@ -43,7 +43,7 @@ Selecting Elements
 
 ### CSS selectors
 
-* **select all** * - matches every element (rarely used)
+* **select all** - The asterisk character `*` matches every element (rarely used)
 
 ```css
 * { outline: 1px solid black; }
@@ -52,7 +52,9 @@ Selecting Elements
 
 This is useful for seeing where elements are and how they line up on the page.
 
-* select by tagname - any name without a symbol infront of it matches elements by tagname (eg div, input, p, ul ... also rarely used)
+
+
+* **select by tagname** - any name without a symbol infront of it matches elements by tagname (eg div, input, p, ul ... also rarely used)
 
 ```css
 div { font-size: 10px; } /* matches every div on the page */
