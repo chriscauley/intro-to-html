@@ -65,7 +65,7 @@ Typically a style sheet will start by setting a few default font properties by s
 ```css
 body {
    font-size: 12px;
-   font-family: "Arial", sans-serif;
+   font-family: Arial;
 }
 ```
 
@@ -95,7 +95,7 @@ Additionally there are many articles with `class="post"`. If we want the font-fa
 
 ```css
 .post {
-  font-family: serif;
+  font-family: Times;
 }
 ```
 
@@ -114,7 +114,7 @@ Additionally there are many articles with `class="post"`. If we want the font-fa
 }
 ```
 
-<br><br><br><br>
+<br><br>
 
 ### Chaining Selectors
 
@@ -126,6 +126,8 @@ input[type=text].required {
 }
 /* matches all inputs of type=text with class="required" */
 ```
+
+<br><br>
 
 ### multiple sets of selectors
 
@@ -144,6 +146,8 @@ ol { margin: 0; }
 h1 { margin: 0; }
 ...
 ```
+
+<br><br>
 
 Selecting Descendents
 ========
