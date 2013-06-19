@@ -80,6 +80,8 @@ body {
 /* matches the element with id="mainnav" */
 ```
 
+<br><br>
+
 * select by class - The period or "dot" selects all elements of a given class. Classes set off an element as belonging to a class or set of similar elements. In index.html we see `class="current"` in the nav. It's not a specific element, so we don't use an id. It is the current nav element, which is subject to change.
 
 ```css
@@ -97,6 +99,8 @@ Additionally there are many articles with `class="post"`. If we want the font-fa
 }
 ```
 
+<br><br>
+
 * select by attribute [attr=value] - alternately we could have done the same thing by selecting the class directly. Note that this matches then entire class attribute. This is mostly used to select inputs of a specific type.
 
 ```css
@@ -110,7 +114,9 @@ Additionally there are many articles with `class="post"`. If we want the font-fa
 }
 ```
 
-### chaining selectors
+<br><br><br><br>
+
+### Chaining Selectors
 
 Selectors not separated by a space indicate that you should match elements matching all selectors.
 
@@ -121,7 +127,25 @@ input[type=text].required {
 /* matches all inputs of type=text with class="required" */
 ```
 
-selecting descendents
+### multiple sets of selectors
+
+You can apply the same set of rules to as many selectors as you want by separating sets of selectors by commas:
+
+```css
+body, ul, ol, h1, h2, h3, h4, h5, h6 { margin: 0; }
+```
+
+Is the same as writting:
+
+```css
+body { margin: 0; }
+ul { margin: 0; }
+ol { margin: 0; }
+h1 { margin: 0; }
+...
+```
+
+Selecting Descendents
 ========
 
 ### space
@@ -132,6 +156,8 @@ Selectors separated by spaces indicate that you should matches only elements of 
 #sidebar li { text-decoration: underline; }
 /* matches all li elements inside of the #sidebar */
 ```
+
+<br><br>
 
 ### immediate child >
 
@@ -170,12 +196,13 @@ body > * > * > * > * {
   border: 10px black solid;
 }
 ```
+<br><br>
 
 ### pseudo classes
 
 Pseudo classes act like classes, and match elements with specific criteria. The are denoted with a colon.
 
-1. :first-child :last-child
+* `:first-child` and `:last-child`
 
 ```css
 #sidebar li:first-child { font-weight: bold; }
@@ -195,7 +222,9 @@ Works like this:
 </aside>
 ```
 
-2. :not(selectors) matches all elements that do not match the criteria. This is a useful shortcut.
+<br><br>
+
+* `:not(selectors)` matches all elements that do not match the criteria. This is a useful shortcut.
 
 ```css
 #sidebar li { color: purple }
@@ -230,7 +259,17 @@ Works like this:
 </aside>
 ```
 
-### :selected :checked
+<br><br>
+
+* `:hover` selects an element that is hovered over.
+
+```css
+div:hover {
+  background: pink;
+}
+```
+
+<!--### :selected :checked
 
 These are useful on <select> elements and [type=radio] or [type=checkbox] respectively
 
@@ -243,24 +282,9 @@ li:nth-child(2n) { display: none; } /* hides even elements */
 li:nth-child(2n+1) { font-weight: bold; } /* bolds odd elements */
 li:not(:nth-child(3n)) { color: purple; } /* purples every non-third element */
 ```
+-->
 
-### multiple sets of selectors
-
-You can apply the same set of rules to as many selectors as you want by separating sets of selectors by commas:
-
-```css
-body, ul, ol, h1, h2, h3, h4, h5, h6 { margin: 0; }
-```
-
-Is the same as writting:
-
-```css
-body { margin: 0; }
-ul { margin: 0; }
-ol { margin: 0; }
-h1 { margin: 0; }
-...
-```
+<br><br>
 
 CSS attributes
 ========
@@ -295,6 +319,8 @@ We should start with a discussion of units, because math is fun.
 
 * physical units mm, cm, and in are available, but are buggy and should never be used
 
+<br><br>
+
 ### CSS colors
 
 Many CSS attributes can take colors. These can be expressed in 3 ways:
@@ -326,6 +352,8 @@ body { background-color: #202020 }
 #sidebar { background: rgba(255,255,255,.9); }
 /* the side bar now has a white, slightly see-through background */
 ```
+
+<br><br>
 
 ### font and all of it's marvelous variants!
 
