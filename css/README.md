@@ -44,31 +44,60 @@ selecting elements
 /* the above line hides all *
 ```
 
+This is useful for seeing where elements are and how they line up on the page.
+
 * select by tagname - any name without a symbol infront of it matches elements by tagname (eg div, input, p, ul ... also rarely used)
 
 ```css
 div { font-size: 10px; } /* matches every div on the page */
 ```
 
-* select by id - The number sign selects elements by id
+Typically a style sheet will start by setting a few default font properties by selecting the body. Font properties are "inherited", meaning that if an element does not explicitly have a font, it will default to the font of its parent, its parents parent, and so on. In the files provided by the course material there is a folder called css containing a stylesheet "style.css" and an html document called "index.html". Add this to "style.css", save, and open the html file in a browser.
 
 ```css
-#main-container { margin: 0 auto; }
-/* matches the element with id="main-container */
+body {
+   font-size: 12px;
+   font-family: "Arial", sans-serif;
+}
 ```
 
-* select by class
+* select by id - The number sign selects elements by id. Maybe we want all of the text inside `id="mainnav"` to be 2px smaller than the rest of the body. We do this by adding the following to "style.css".
 
 ```css
-.purple-text { color: purple; }
-/* matches any element with class="purple-text" */
+#mainnav {
+  font-size: 10px;
+}
+/* matches the element with id="mainnav" */
 ```
 
-* select by attribute [attr=value]
+* select by class - The period or "dot" selects all elements of a given class. Classes set off an element as belonging to a class or set of similar elements. In index.html we see `class="current"` in the nav. It's not a specific element, so we don't use an id. It is the current nav element, which is subject to change.
 
 ```css
-[type=text] { background: pink; }
+.current {
+  font-weight: bold;
+}
+/* matches any element with class="current" */
+```
+
+Additionally there are many articles with `class="post"`. If we want the font-family to be Times we can change it like:
+
+```css
+.post {
+  font-family: serif;
+}
+```
+
+* select by attribute [attr=value] - alternately we could have done the same thing by selecting the class directly. Note that this matches then entire class attribute. This is mostly used to select inputs of a specific type.
+
+```css
+[type=text] {
+  background: pink;
+}
 /* matches all text inputs */
+
+[class=article] {
+  background: pink;
+}
 ```
 
 ### chaining selectors
@@ -76,7 +105,9 @@ div { font-size: 10px; } /* matches every div on the page */
 Selectors not separated by a space indicate that you should match elements matching all selectors.
 
 ```css
-input[type=text].required { font-weight: bold; }
+input[type=text].required {
+  border: red;
+}
 /* matches all inputs of type=text with class="required" */
 ```
 
@@ -88,8 +119,8 @@ selecting descendents
 Selectors separated by spaces indicate that you should matches only elements of the second selector conatained by elements matching the first selector.
 
 ```css
-#side-bar li { text-decoration: underline; }
-/* matches all li elements inside of the #side-bar */
+#sidebar li { text-decoration: underline; }
+/* matches all li elements inside of the #sidebar */
 ```
 
 ### immediate child >
@@ -97,18 +128,37 @@ Selectors separated by spaces indicate that you should matches only elements of 
 To select only immediate children, the greater than sign is used
 
 ```css
-#side-bar > div { font-weight: bold; }
+#sidebar > div {
+  outline: black 1px solid;
+}
 ```
 
 Works like this:
 
 ```html
-<aside id="side-bar">
+<aside id="sidebar">
   <div>This is matched</div>
   <form>
     <div>I am not matched</div>
   </form>
 </aside>
+```
+
+We can use this to do one of my favorite debugging tricks. The following code will set the background of the html elements to white, light gray, etc. depending on whether it is body's child, grandchild, etc.
+
+```css
+body > * {
+  border: 10px green solid;
+}
+body > * > * {
+  border: 10px pink solid;
+}
+body > * > * > *{
+  border: 10px red solid;
+}
+body > * > * > * > * {
+  border: 10px black solid;
+}
 ```
 
 ### pseudo classes
@@ -118,14 +168,14 @@ Pseudo classes act like classes, and match elements with specific criteria. The 
 1. :first-child :last-child
 
 ```css
-#side-bar li:first-child { font-weight: bold; }
-#side-bar li:last-child { text-decoration: underline; }
+#sidebar li:first-child { font-weight: bold; }
+#sidebar li:last-child { font-style: italic; }
 ```
 
 Works like this:
 
 ```html
-<aside id="side-bar">
+<aside id="sidebar">
   <ul>
     <li>I am bold</li>
     <li>I am nothing</li>
@@ -138,12 +188,12 @@ Works like this:
 2. :not(selectors) matches all elements that do not match the criteria. This is a useful shortcut.
 
 ```css
-#side-bar li { color: purple }
-#side-bar li:not(.visible) { display: none; }
+#sidebar li { color: purple }
+#sidebar li:not(.visible) { display: none; }
 ```
 
 ```html
-<aside id="side-bar">
+<aside id="sidebar">
   <ul>
 
     <li class="visible">
@@ -189,12 +239,13 @@ li:not(:nth-child(3n)) { color: purple; } /* purples every non-third element */
 You can apply the same set of rules to as many selectors as you want by separating sets of selectors by commas:
 
 ```css
-ul, ol, h1, h2, h3, h4, h5, h6 { margin: 0; }
+body, ul, ol, h1, h2, h3, h4, h5, h6 { margin: 0; }
 ```
 
 Is the same as writting:
 
 ```css
+body { margin: 0; }
 ul { margin: 0; }
 ol { margin: 0; }
 h1 { margin: 0; }
@@ -213,15 +264,15 @@ We should start with a discussion of units, because math is fun.
 * px - number of pixels for a given attribute
 
 ```css
-#side-bar { height: 1000px; }
+#sidebar { height: 1000px; }
 /* The side bar is now 1000 pixels tall */
 ```
 
 * percent of current container's value
 
 ```css
-#side-bar > * { height: 20% }
-/* a great ide if #side-bar has 5 children! */
+#sidebar > * { height: 20% }
+/* a great ide if #sidebar has 5 children! */
 ```
 
 * em - ratio of parent container's value
@@ -254,15 +305,15 @@ body { background-color: #202020 }
 ```
 
 ```css
-#side-bar { border: #733 }
+#sidebar { border: #733 }
 /* the side bar now has a dark red border */
 /* this is equivalent to #773333 */
 ```
 
-* rgba(#,#,#,#) - the a is alpha, or % opacity. It is between 0 and 1.
+* rgba(#,#,#,#) - the a is alpha channel or opacity of the collor. It is between 0 and 1.
 
 ```css
-#side-bar { background: rgba(255,255,255,.9); }
+#sidebar { background: rgba(255,255,255,.9); }
 /* the side bar now has a white, slightly see-through background */
 ```
 
@@ -308,19 +359,19 @@ font-family: "Helvetica", Arial, sans-serif;
 The box model
 --------
 
-Googling the box model will get you a good image. I'm not going to bother reproducing one here.
+Googling the box model will get you a good image with labels. In the css folder there is also a wile called "boxmodel.html" that you can use to play with this.
 
 ### The box
 
-Any element with `display: block` or `display: inline-block` is considered a block. Inline-block elements will not break the line, block elements will.  It has several layers, from outside to in, they are:
+Any element with `display: block` or `display: inline-block` or `float: left;` or `float: right` is considered a block. Inline-block elements will not break the line, block elements will.  It has several layers, from outside to in, they are:
 
-1. margin: the spacing between the border and neighboring elements.
+1. margin: the spacing between the border and neighboring elements. (pink in the example)
 
-2. border: a layer between the margin and padding. Can have color and style.
+2. border: a layer between the margin and padding. Can have color and style. (black)
 
-3. padding: the distance between the border and the content. The background will be shown in the padding.
+3. padding: the distance between the border and the content. The background will be shown in the padding. (blue)
 
-4. content: the actual content shown. This will be set by the width and the height properties. If not set the content can be as wide as the parent content and as heigh as necessary.
+4. content: the actual content shown. This will be set by the width and the height properties. If not set the content can be as wide as the parent content and as heigh as necessary. (green)
 
 ### Assigning size
 
@@ -403,7 +454,7 @@ Here's where it gets tricky. Absolute elements are positioned "relative to the c
       I'm at the bottom of the body!
     </div>
 
-    <div id="side-bar" style="position: relative;">
+    <div id="sidebar" style="position: relative;">
       <div style="position: absolute; top: 20px;">
         I'm 20px from the top of the sidebar!
       </div>

@@ -1,1 +1,12 @@
-
+body > * {                                                                                                              
+  border: 10px green solid;                                                                                              
+}                                                                                                                       
+body > * > * {                                                                                                          
+  border: 10px pink solid;                                                                                               
+}                                                                                                                       
+body > * > * > *{                                                                                                       
+  border: 10px red solid;                                                                                                
+}                                                                                                                       
+body > * > * > * > * {                                                                                                  
+  border: 10px black solid;
+}
