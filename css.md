@@ -11,7 +11,7 @@ CSS comments are denoted like this `/* this is a comment */` (similar to comment
 
 CSS can be included in three ways:
 
-1. The style tag:
+* The style tag:
 
 ```html
 <style type="text/css">
@@ -19,13 +19,13 @@ CSS can be included in three ways:
 </style>
 ```
 
-2. External style sheets:
+* External style sheets:
 
 ```css
 <link rel="stylesheet" type="text/css" href="/path/to/stylesheet.css" />
 ```
 
-3. Inline (element specific styles, no selector used):
+* Inline (element specific styles, no selector used):
 
 ```html
 <p>This is normal sized</p>
@@ -37,14 +37,14 @@ selecting elements
 
 ### CSS selectors
 
-* select all * - matches every element
+* select all * - matches every element (rarely used)
 
 ```css
-* { display: none }
+* { outline: 1px solid black; }
 /* the above line hides all *
 ```
 
-* select by tagname - any name without a symbol infront of it matches elements by tagname (eg div, input, p, ul ...)
+* select by tagname - any name without a symbol infront of it matches elements by tagname (eg div, input, p, ul ... also rarely used)
 
 ```css
 div { font-size: 10px; } /* matches every div on the page */
@@ -60,7 +60,7 @@ div { font-size: 10px; } /* matches every div on the page */
 * select by class
 
 ```css
-.purple-text
+.purple-text { color: purple; }
 /* matches any element with class="purple-text" */
 ```
 
@@ -113,7 +113,7 @@ Works like this:
 
 ### pseudo classes
 
-Pseudo classes act like classes, and match elements with specific criteria. The are denoted with a colon
+Pseudo classes act like classes, and match elements with specific criteria. The are denoted with a colon.
 
 1. :first-child :last-child
 
