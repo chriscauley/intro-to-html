@@ -43,7 +43,7 @@ Selecting Elements
 
 ### CSS selectors
 
-* *select all* * - matches every element (rarely used)
+* **select all** * - matches every element (rarely used)
 
 ```css
 * { outline: 1px solid black; }
