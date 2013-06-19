@@ -1,17 +1,23 @@
 Intro to CSS
 ========
 
-CSS is performed by a series of selectors and attributes.
+CSS is performed by a series of rules. Each rule consists of selectors and styles, where the styles are contained in braces like `selectors { styles }`. Each style is a key pair and each rule can have as many styles as needed. Styles are separated with semicolons, and keys are matched to values using colons.
 
 ```css
-selector { key: value; key: value; key: value }
+selector {
+  key: value;
+  key: value;
+  key: value;
+}
 ```
+
+CSS is "white space agnostic", meaning the line breaks and spaces do not matter. Code is separated into rules, styles, keys and values using the syntax characters (braces, colons and semicolons). 
 
 CSS comments are denoted like this `/* this is a comment */` (similar to comments in PHP, C, or java).
 
-CSS can be included in three ways:
+CSS can be included in an html document in three ways:
 
-* The style tag:
+* The style tag inserts rules directly into an html document. Everything between `<style>` and `</style>` is no longer html. It is considered css by the browser.
 
 ```html
 <style type="text/css">
@@ -19,25 +25,25 @@ CSS can be included in three ways:
 </style>
 ```
 
-* External style sheets:
+* External style sheets tell the browser "look up the url at this href and insert it like you would a style tag". This is no different than pasting the contents of the stylesheet inside ofa style tag.
 
 ```css
 <link rel="stylesheet" type="text/css" href="/path/to/stylesheet.css" />
 ```
 
-* Inline (element specific styles, no selector used):
+* Inline (element specific styles, no selector used) set the style of an individual element. This is generally avoided on the finished product because it makes for sloppy html and inefficient styles.
 
 ```html
 <p>This is normal sized</p>
 <p style="font-size: 10em">This is 10x as large.</p>
 ```
 
-selecting elements
+Selecting Elements
 --------
 
 ### CSS selectors
 
-* select all * - matches every element (rarely used)
+* *select all* * - matches every element (rarely used)
 
 ```css
 * { outline: 1px solid black; }
