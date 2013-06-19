@@ -25,13 +25,13 @@ CSS can be included in an html document in three ways:
 </style>
 ```
 
-* External style sheets (the `<link>` tag)tell the browser "look up the url at this href and insert it like you would a style tag". This is no different than pasting the contents of the stylesheet inside ofa style tag.
+* **External style sheets** tell the browser "look up the url at this href and insert it like you would a style tag". This is no different than pasting the contents of the stylesheet inside ofa style tag.
 
 ```css
 <link rel="stylesheet" type="text/css" href="/path/to/stylesheet.css" />
 ```
 
-* Inline (a tags `style="foo"` attribute) set the style of an individual element. This is generally avoided on the finished product because it makes for sloppy html and inefficient styles.
+* **Inline styles** set the style of an individual element. This is generally avoided on the finished product because it makes for sloppy html and inefficient styles.
 
 ```html
 <p>This is normal sized</p>
@@ -68,6 +68,8 @@ body {
    font-family: "Arial", sans-serif;
 }
 ```
+
+<br><br>
 
 * select by id - The number sign selects elements by id. Maybe we want all of the text inside `id="mainnav"` to be 2px smaller than the rest of the body. We do this by adding the following to "style.css".
 
