@@ -52,7 +52,7 @@ Selecting Elements
 
 This is useful for seeing where elements are and how they line up on the page.
 
-
+<br><br>
 
 * **select by tagname** - any name without a symbol infront of it matches elements by tagname (eg div, input, p, ul ... also rarely used)
 
