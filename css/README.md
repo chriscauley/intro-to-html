@@ -1,6 +1,14 @@
 Intro to CSS
 ========
 
+### How to use this file
+
+Save the source code of this repositiory (by clicking the zip button near the top of the page) and extract it to your desktop. Open the index.html file in a chrome browser (by right clicking it and selecting open with... chrome) and then open the style.css file in a text editor (eg notepad++). Then open http://www.cssheaven.org/preview/cleanred/  in another chrome window, which is the site I stole the html file from (please don't sue!). The goal of this class is to make the dummy file look similar to the example.
+
+<br><br>
+
+### The basics
+
 CSS is performed by a series of rules. Each rule consists of selectors and styles, where the styles are contained in braces like `selectors { styles }`. Each style is a key pair and each rule can have as many styles as needed. Styles are separated with semicolons, and keys are matched to values using colons.
 
 ```css
@@ -401,7 +409,7 @@ font-family: "Helvetica", Arial, sans-serif;
 The box model
 ========
 
-Googling the box model will get you a good image with labels. In the css folder there is also a wile called "boxmodel.html" that you can use to play with this.
+Googling the box model will get you a good image with labels. In the css folder there is also a file called "boxmodel.html" that you can use to play with this.
 
 ### The box
 
