@@ -79,7 +79,7 @@ body {
 
 <br><br>
 
-* select by id - The number sign selects elements by id. Maybe we want all of the text inside `id="mainnav"` to be 2px smaller than the rest of the body. We do this by adding the following to "style.css".
+* **select by id** `#id` - The number sign selects elements by id. Maybe we want all of the text inside `id="mainnav"` to be 2px smaller than the rest of the body. We do this by adding the following to "style.css".
 
 ```css
 #mainnav {
@@ -90,7 +90,7 @@ body {
 
 <br><br>
 
-* select by class - The period or "dot" selects all elements of a given class. Classes set off an element as belonging to a class or set of similar elements. In index.html we see `class="current"` in the nav. It's not a specific element, so we don't use an id. It is the current nav element, which is subject to change.
+* **select by class** `.className` - The period or "dot" selects all elements of a given class. Classes set off an element as belonging to a class or set of similar elements. In index.html we see `class="current"` in the nav. It's not a specific element, so we don't use an id. It is the current nav element, which is subject to change.
 
 ```css
 .current {
@@ -109,7 +109,7 @@ Additionally there are many articles with `class="post"`. If we want the font-fa
 
 <br><br>
 
-* select by attribute [attr=value] - alternately we could have done the same thing by selecting the class directly. Note that this matches then entire class attribute. This is mostly used to select inputs of a specific type.
+* **select by attribute** `[attr=value]` - alternately we could have done the same thing by selecting the class directly. Note that this matches then entire class attribute. This is mostly used to select inputs of a specific type.
 
 ```css
 [type=text] {
@@ -324,12 +324,12 @@ We should start with a discussion of units, because math is fun.
 * em - ratio of parent container's value
 
 ```css
-#profile-box { font-size: 20px; }
-#profile-box > p { font-size: .5em } /* font-size of p is now 10px; */
-#profile-box > h1 { font-size: 1.3em } /* font-size of h1 is now 26px; */
+.wrapper { font-size: 20px; }
+.wrapper > p { font-size: .5em } /* font-size of p is now 10px; */
+.wrapper > h2 { font-size: 1.3em } /* font-size of h1 is now 26px; */
 ```
 
-* physical units mm, cm, and in are available, but are buggy and should never be used
+* physical units mm, cm, and in are available, but are buggy and should only be handled by trained professionals
 
 <br><br>
 
