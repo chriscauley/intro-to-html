@@ -17,7 +17,7 @@ CSS comments are denoted like this `/* this is a comment */` (similar to comment
 
 CSS can be included in an html document in three ways:
 
-* The style tag inserts rules directly into an html document. Everything between `<style>` and `</style>` is no longer html. It is considered css by the browser.
+* The `<style>` tag inserts rules directly into an html document. Everything between `<style>` and `</style>` is no longer html. It is considered css by the browser.
 
 ```html
 <style type="text/css">
@@ -25,13 +25,13 @@ CSS can be included in an html document in three ways:
 </style>
 ```
 
-* External style sheets tell the browser "look up the url at this href and insert it like you would a style tag". This is no different than pasting the contents of the stylesheet inside ofa style tag.
+* External style sheets (the `<link>` tag)tell the browser "look up the url at this href and insert it like you would a style tag". This is no different than pasting the contents of the stylesheet inside ofa style tag.
 
 ```css
 <link rel="stylesheet" type="text/css" href="/path/to/stylesheet.css" />
 ```
 
-* Inline (element specific styles, no selector used) set the style of an individual element. This is generally avoided on the finished product because it makes for sloppy html and inefficient styles.
+* Inline (a tags `style="foo"` attribute) set the style of an individual element. This is generally avoided on the finished product because it makes for sloppy html and inefficient styles.
 
 ```html
 <p>This is normal sized</p>
@@ -39,7 +39,7 @@ CSS can be included in an html document in three ways:
 ```
 
 Selecting Elements
---------
+========
 
 ### CSS selectors
 
@@ -120,7 +120,7 @@ input[type=text].required {
 ```
 
 selecting descendents
---------
+========
 
 ### space
 
@@ -261,7 +261,7 @@ h1 { margin: 0; }
 ```
 
 CSS attributes
---------
+========
 
 Attributes follow the pattern key-colon-value-semicolon, as seen above in many examples.
 Attributes can be used to change the display, positioning, font attributes, or box attributes of an element.
@@ -365,7 +365,7 @@ font-family: "Helvetica", Arial, sans-serif;
 ```
 
 The box model
---------
+========
 
 Googling the box model will get you a good image with labels. In the css folder there is also a wile called "boxmodel.html" that you can use to play with this.
 
@@ -416,7 +416,7 @@ border-color: black;
 Borders also can have `border-radius`, which rounds the corners of the border.
 
 Positioning
---------
+========
 
 ### Static
 
@@ -474,7 +474,7 @@ Here's where it gets tricky. Absolute elements are positioned "relative to the c
 ```
 
 Backgrounds
---------
+========
 
 Backgrounds can be images or colors. Backgrounds also have a shorthand:
 
